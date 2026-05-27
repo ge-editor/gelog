@@ -22,7 +22,7 @@ jobs:
       - name: Configure remote
         run: |
           git remote add codeberg \
-          https://${{ secrets.CODEBERG_TOKEN }}@codeberg.org/ge-editor/ge.git
+          https://${{ secrets.CODEBERG_TOKEN }}@codeberg.org/ge-editor/gelog.git
 
       - name: Push mirror (retry)
         run: |
