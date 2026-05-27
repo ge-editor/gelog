@@ -62,7 +62,7 @@ func levelLabel(l slog.Level) string {
 	case slog.LevelWarn:
 		return "⚠️[WARN]"
 	case slog.LevelError:
-		return "❌[ERROR]"
+		return "⛔[ERROR]"
 	case LevelKey:
 		return "🪷[KEY]"
 	default:
