@@ -34,11 +34,15 @@ func Key(msg string, args ...any) {
 }
 
 // 呼び出し元の情報を整形して返すヘルパー関数
-func CallerInfo() string {
-	// skip: 0=Caller自身, 1=callerInfoの呼び出し元, 2=さらにその呼び出し元
-	pc, file, line, ok := runtime.Caller(2)
+// skip = 2
+func CallerInfo(skip int) string {
+	// skip:
+	// 0: Caller自身
+	// 1: callerInfoの呼び出し元
+	// 2: さらにその呼び出し
+	pc, file, line, ok := runtime.Caller(skip)
 	if !ok {
-		return "unknown:0"
+		return "unknown skip: 0"
 	}
 	// パス全体が長い場合はファイル名だけに絞ることも可能
 	// shortFile := filepath.Base(file)
